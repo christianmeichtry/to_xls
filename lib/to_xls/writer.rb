@@ -65,7 +65,7 @@ module ToXls
     end
 
     def get_columns_from_first_element
-      @array.first.attributes.keys.sort_by {|sym| sym.to_s}.collect.to_a
+      @array.first.attributes.keys.sort_by {|sym| "#{sym.to_s} ++"}.collect.to_a.map {|f| "#{f} $"}
     end
 
     def headers
